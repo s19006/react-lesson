@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+  const getCurrentFormatedTime = (d, sep) => ([
+    d.getHours(),
+    d.getMinutes(),
+    d.getSeconds()].map(v => v.toString().padStart(2, '0'))
+    .join(sep)
+    )
+    setInterval(() => ReactDOM.render(
+      <div>{getCurrentFormatedTime(new Date(), ':')}</div>,
+      document.getElementById('root')),
+      1000)
+ </script>
+
+
